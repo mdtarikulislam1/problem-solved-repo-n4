@@ -6,6 +6,11 @@
 - Problem 3: Count Word Frequency
 - Problem 4: Check Palindrome
 - Problem 5: Group Even and Odd Numbers
+- Problem 6: Find Maximum Number (Without Math.max)
+- Problem 7: Reverse a String (Logic Based)
+- Problem 8: Sum of Only Positive Numbers
+- Problem 9: Find Longest Word
+- Problem 10: Find Missing Number
 
 # Solution
 
@@ -71,3 +76,65 @@ const groupOddEven = {
 }
 console.log(groupOddEven)
 ```
+### Find Maximum Number (Without Math.max)
+
+```javascript
+const numbers = [21,54,21,54,87,120]
+let maximumNumber = numbers[0]
+for(let i = 0; i<numbers.length; i++){
+    if(numbers[i] > maximumNumber){
+        maximumNumber = numbers[i]
+    }
+}
+console.log(maximumNumber)
+```
+### Reverse a String (Logic Based)
+```javascript
+const str = "amiTumi";
+const strOfArray = str.split("");
+
+let reverseArray = []
+
+for(let i = strOfArray.length - 1; i >= 0; i--){
+    reverseArray.push(strOfArray[i])
+}
+console.log(reverseArray.join(''))
+```
+### Sum of Only Positive Numbers
+
+```javascript
+const numbers = [1,2,3,4,5,6,-7,8]
+const totalPositiveNumbers = numbers.reduce((map,item)=>{
+   if(item < 0){
+    return map - item
+   }
+    return map
+},0)
+console.log(totalPositiveNumbers)
+```
+### Find Longest Word
+
+```javascript
+const str = 'What happen in the dayyyyyy'
+const strToArrayInWord = str.match(/\w+/g)
+let largeWordInStr =strToArrayInWord[0]
+for(let i = 0; i < strToArrayInWord.length; i++){
+    if(strToArrayInWord[i].length > largeWordInStr.length){
+        largeWordInStr = strToArrayInWord[i]
+    }
+}
+console.log(largeWordInStr)
+```
+### Find Missing Number
+
+```javascript
+const numbers = [1, 2, 3, 5, 6];
+for(let i = 0; i<numbers.length; i++){
+    let plus = 1+ i
+    if(plus !==numbers[i]){
+        console.log(plus)
+        break
+    }
+}
+```
+
